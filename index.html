@@ -12,13 +12,22 @@
             height: 100%;
             width: 100%;
         }
-        
-        /* Making sure the iframe takes the full height and width of the page */
+
+        /* Default styles for desktop (larger screens) */
         iframe {
             display: block;
             width: 100vw;  /* 100% of viewport width */
             height: 100vh; /* 100% of viewport height */
             border: none;
+        }
+
+        /* Media query for smaller screens (mobile devices) */
+        @media only screen and (max-width: 768px) {
+            iframe {
+                width: 90vw;  /* 90% of viewport width */
+                height: 80vh; /* 80% of viewport height */
+                margin: 5vh auto; /* Center the iframe and add some vertical space */
+            }
         }
     </style>
 </head>
