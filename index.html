@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My CV</title>
     <style>
-        /* Ensure the page uses the full viewport */
+        /* Resetting margin and padding for the body and html */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-        }
-        embed {
-            display: block;
             width: 100%;
-            height: 100%;
+        }
+        
+        /* Making sure the iframe takes the full height and width of the page */
+        iframe {
+            display: block;
+            width: 100vw;  /* 100% of viewport width */
+            height: 100vh; /* 100% of viewport height */
             border: none;
         }
     </style>
 </head>
 <body>
-    <embed src="index.pdf" type="application/pdf" />
+    <iframe src="index.pdf" type="application/pdf"></iframe>
 </body>
 </html>
