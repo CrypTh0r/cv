@@ -5,47 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My CV</title>
     <style>
-        /* Reset margin and padding for the body and html */
+        /* Resetting margin and padding for the body and html */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            font-family: Arial, sans-serif;
         }
-
-        /* Container for the PDF */
-        .pdf-container {
-            height: 100%; /* Full height of the viewport */
-            width: 100%;  /* Full width of the viewport */
-            overflow: hidden; /* Hide any overflow (no horizontal scroll) */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Embed PDF iframe */
+        
+        /* Making sure the iframe takes the full height and width of the page */
         iframe {
-            width: 100%;  /* Make PDF take full width */
-            height: 100%; /* Make PDF take full height */
+            display: block;
+            width: 100vw;  /* 100% of viewport width */
+            height: 100vh; /* 100% of viewport height */
             border: none;
-        }
-
-        /* Mobile Specific Styles */
-        @media (max-width: 768px) {
-            /* On mobile, scale the height to 65% but keep the width at 100% */
-            .pdf-container iframe {
-                transform: scale(0.65);  /* Scale vertically down to 65% */
-                transform-origin: top center;  /* Keep the scaling from the top */
-                height: auto;  /* Allow the height to adjust accordingly */
-            }
         }
     </style>
 </head>
 <body>
-    <div class="pdf-container">
-        <!-- PDF iframe embedded -->
-        <iframe src="index.pdf" type="application/pdf"></iframe>
-    </div>
+    <iframe src="index.pdf" type="application/pdf"></iframe>
 </body>
 </html>
