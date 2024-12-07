@@ -13,19 +13,20 @@
             width: 100%;
         }
 
-        /* Default styles for the iframe (take full screen) */
+        /* Default styles for the iframe (take full width, full height) */
         iframe {
             display: block;
-            width: 100vw;  /* 100% of viewport width */
-            height: 100vh; /* 100% of viewport height */
+            width: 100%;  /* Ensure the iframe takes full width */
+            height: 100vh; /* Full viewport height */
             border: none;
-            transform-origin: 0 0;  /* Scaling starts from the top-left corner */
         }
 
-        /* Media query for smaller screens (mobile devices) */
+        /* Mobile specific styles (scaling the height but keeping width 100%) */
         @media only screen and (max-width: 768px) {
             iframe {
-                transform: scale(0.65); /* Scale the PDF content to 65% */
+                height: 150vh;  /* Allow extra height for better fit */
+                transform: scale(0.65); /* Scale vertically to 65% */
+                transform-origin: 0 0;  /* Scaling from top-left */
             }
         }
     </style>
