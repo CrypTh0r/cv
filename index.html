@@ -13,19 +13,19 @@
             width: 100%;
         }
 
-        /* Default styles for desktop (larger screens) */
+        /* Default styles for the iframe (take full screen) */
         iframe {
             display: block;
             width: 100vw;  /* 100% of viewport width */
             height: 100vh; /* 100% of viewport height */
             border: none;
+            transform-origin: 0 0;  /* Scaling starts from the top-left corner */
         }
 
         /* Media query for smaller screens (mobile devices) */
         @media only screen and (max-width: 768px) {
             iframe {
-                width: 65vw;  /* 65% of viewport width */
-                height: 65vh; /* 65% of viewport height */
+                transform: scale(0.65); /* Scale the PDF content to 65% */
             }
         }
     </style>
