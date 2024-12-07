@@ -14,49 +14,38 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Container for the page */
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        /* PDF display container */
+        /* PDF container that takes up full viewport */
         .pdf-container {
-            flex-grow: 1;
-            overflow: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden; /* Hide overflow to prevent horizontal scroll */
         }
 
-        /* PDF iframe */
+        /* PDF iframe style */
         iframe {
-            width: 100%;
-            height: 100%;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
             border: none;
         }
 
         /* Mobile Specific Styles */
         @media (max-width: 768px) {
-            /* Adjusting the scaling of the PDF for mobile devices */
+            /* Scaling the PDF vertically to 65% on mobile, but keeping full width */
             .pdf-container iframe {
-                height: 100%;
-                transform: scale(0.65); /* Scale the PDF to 65% for mobile */
-                transform-origin: top center;
-            }
-
-            /* Ensuring that the PDF container allows scrolling on mobile */
-            .pdf-container {
-                overflow-y: auto;
+                transform: scale(0.65); /* Scale down vertically */
+                transform-origin: top center; /* Keep the scale from the top */
+                height: auto; /* Ensure the height adjusts properly */
             }
         }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- PDF display area -->
-        <div class="pdf-container">
-            <iframe src="index.pdf" type="application/pdf"></iframe>
-        </div>
+    <div class="pdf-container">
+        <!-- PDF iframe embedded -->
+        <iframe src="index.pdf" type="application/pdf"></iframe>
     </div>
 </body>
 </html>
