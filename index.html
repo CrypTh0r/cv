@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My CV</title>
     <style>
-        /* Resetting margin and padding for the body and html */
+        /* Reset margin and padding for the body and html */
         html, body {
             margin: 0;
             padding: 0;
@@ -14,32 +14,32 @@
             font-family: Arial, sans-serif;
         }
 
-        /* PDF container that takes up full viewport */
+        /* Container for the PDF */
         .pdf-container {
+            height: 100%; /* Full height of the viewport */
+            width: 100%;  /* Full width of the viewport */
+            overflow: hidden; /* Hide any overflow (no horizontal scroll) */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full viewport height */
-            overflow: hidden; /* Hide overflow to prevent horizontal scroll */
         }
 
-        /* PDF iframe style */
+        /* Embed PDF iframe */
         iframe {
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
+            width: 100%;  /* Make PDF take full width */
+            height: 100%; /* Make PDF take full height */
             border: none;
         }
 
         /* Mobile Specific Styles */
         @media (max-width: 768px) {
-            /* Scaling the PDF vertically to 65% on mobile, but keeping full width */
+            /* On mobile, scale the height to 65% but keep the width at 100% */
             .pdf-container iframe {
-                transform: scale(0.65); /* Scale down vertically */
-                transform-origin: top center; /* Keep the scale from the top */
-                height: auto; /* Ensure the height adjusts properly */
+                transform: scale(0.65);  /* Scale vertically down to 65% */
+                transform-origin: top center;  /* Keep the scaling from the top */
+                height: auto;  /* Allow the height to adjust accordingly */
             }
         }
-
     </style>
 </head>
 <body>
